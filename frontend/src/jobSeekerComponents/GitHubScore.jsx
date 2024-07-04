@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { BlackButton } from '../components';
 
 const GitHubScore = () => {
     const {gitHubDetails}=useParams();
@@ -35,10 +36,10 @@ const GitHubScore = () => {
         </div>
         <div className='md:visible invisible'>
             <div className='absolute bottom-10 right-10'>
-                <Link to="/githubstatsform"><button className='border border-white  text-[1.5rem] font-semibold rounded-md hover:bg-white hover:text-black p-4'>Go Back</button></Link>
+            <BlackButton buttonText={"Go Back"} link={"githubstatsform"} />
             </div>   
             <div className='absolute bottom-10  right-48'>
-                <Link to="/menupage"><button className='border border-white  text-[1.5rem] font-semibold rounded-md hover:bg-white hover:text-black p-4'>Menu</button></Link>
+                <BlackButton buttonText={"Menu"} link={"menupage"} />
             </div> 
         </div>    
     </div>

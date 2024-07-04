@@ -1,0 +1,22 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const HomePage = () => {
+  return (
+    <div className='flex h-screen w-screen'>
+        <div className='bg-black text-white font-extrabold text-[7rem] flex-col flex justify-center items-end h-screen w-[50vw]'>
+            <h1>Resume</h1>
+            <h1>v</h1>
+        </div>
+        <div className='font-extrabold text-[7rem] flex-col flex justify-center items-start h-screen w-[50vw]'>
+            <h1>Copilot</h1>
+            <h1>2</h1>
+            <div className='absolute bottom-10 right-10'>
+              <Link to="/menupage"><button className='text-[2rem] bg-black text-white p-4'>Click Here</button></Link>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default HomePage

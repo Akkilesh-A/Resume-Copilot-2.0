@@ -9,6 +9,11 @@ function App() {
     <div>
     <RecoilRoot>
         <BrowserRouter>
+        <div className="md:hidden items-center justify-center flex-col flex w-screen h-screen bg-black text-white">
+        <h1 className="font-bold text-[2rem]">Resume Copilot 2.0</h1>
+          <p>Coming to your screens soon!</p>
+          <p>Till then vist us through bigger screen devices!!</p>
+        </div>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/githubstatsform" element={<GitHubStatsForm />} />

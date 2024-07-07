@@ -15,7 +15,7 @@ const ResumeScore = () => {
     }, []);
 
     return (
-        <div className='bg-black md:h-screen text-white  w-screen pt-16'>
+        <div className='hidden md:block bg-black md:h-screen text-white  w-screen pt-16'>
             <div className=' text-center text-[2.5em] font-bold '>
                 Your Resume Score
             </div>

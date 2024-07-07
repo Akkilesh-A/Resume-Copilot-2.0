@@ -10,7 +10,7 @@ const GitHubScore = () => {
     const user_name=gitHubDetailsArray[1]
 
   return (
-    <div className='bg-black md:h-screen text-white  w-screen pt-16'>
+    <div className='bg-black md:h-screen hidden md:block text-white  w-screen pt-16'>
         <div className=' text-center text-[2.5em] font-bold '>
             Your GitHub Stats
         </div>

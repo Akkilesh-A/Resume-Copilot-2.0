@@ -28,7 +28,7 @@ function ResumeScanner() {
         formData.append('jobTitle', jobTitle);
         formData.append('techStack', techStack);
 
-        const url = "http://localhost:5000/resume_scan_with_ai"; // Ensure this matches your Flask route
+        const url = "https://resume-copilot-2-0.onrender.com/resume_scan_with_ai"; // Ensure this matches your Flask route
         const options = {
             method: 'POST',
             body: formData
@@ -53,7 +53,7 @@ function ResumeScanner() {
     }
 
     return (
-        <div className="flex justify-center h-screen w-screen items-center flex-col bg-black ">
+        <div className="hidden md:flex justify-center h-screen w-screen items-center flex-col bg-black ">
             <div className='bg-white rounded p-8 '>
                 <div className='flex justify-center items-center mb-12'>
                     <h1 className='text-[2.5em] font-extrabold'>Get your Resume Score here!</h1>

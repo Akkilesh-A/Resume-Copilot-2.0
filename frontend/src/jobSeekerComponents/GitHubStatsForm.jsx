@@ -7,7 +7,7 @@ function GitHubStatsForm() {
   const [name,setName]=useState(" ")
 
   return (
-    <div className='h-screen w-screen flex justify-center items-center bg-black'>
+    <div className='h-screen hidden md:flex w-screen justify-center items-center bg-black'>
       <div className=' bg-white p-16 rounded-xl'>
         <div className='flex justify-center items-center mb-12'>
           <h1 className='text-[2.5em] font-extrabold'>Get your GitHub Stats here! 🛫</h1>

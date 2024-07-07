@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={resumeScoreData:[{
-    message: 'Please Try with another!',
+    message: '-',
     jobTitle: '-',
     techStack: '-',
     missingKeywords: '-',
     score: '-',
-    result: '-'
+    result: ''
   }] }
 
 export const resumeScoreSlice=createSlice({

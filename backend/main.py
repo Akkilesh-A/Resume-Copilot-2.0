@@ -124,28 +124,28 @@ def resume_scanner():
             # Initialize missing_keywords variable
             missing_keywords = ""
 
-            # Extract Job Description Match percentage from the response
-            match_percentage_str = response_text.split('"Job Description Match":"')[1].split('"')[0]
+    #         # Extract Job Description Match percentage from the response
+    #         match_percentage_str = response_text.split('"Job Description Match":"')[1].split('"')[0]
             
-            result=""
-            score=" "
+    #         result=""
+    #         score=" "
 
-            # if match_percentage_str == 'N/A':
-            #     score=match_percentage_str
-            #     result=" Sorry yours Skills do not match with the requirements 😣"
-            #     # Get missing keywords from the job description and resume
-            #     missing_keywords = get_missing_keywords(tech_stack, resume_text)
+    #         if match_percentage_str == 'N/A':
+    #             score=match_percentage_str
+    #             result=" Sorry yours Skills do not match with the requirements 😣"
+    #             # Get missing keywords from the job description and resume
+    #             missing_keywords = get_missing_keywords(tech_stack, resume_text)
             
-            # else:
-            # # Remove percentage symbol and convert to float
-            #     match_percentage = float(match_percentage_str.rstrip('%'))
+    #         else:
+    #         # Remove percentage symbol and convert to float
+    #             match_percentage = float(match_percentage_str.rstrip('%'))
 
-            #     if match_percentage >= 20:
-            #         result = f"Your Resume Match is {match_percentage_str} 😊 - This resume matches the job description!"  # Highlight in green for a good match
-            #     else:
-            #         result = f"Match {match_percentage_str} 😭 - This resume does not match the job description."  # Highlight in red for a poor match
-    
-    return jsonify({"message": "Successful!","jobTitle":job_title,"techStack":tech_stack,"missingKeywords" : missing_keywords,"score":response_text,"result":result}), 200
+    #             if match_percentage >= 20:
+    #                 result = f"Your Resume Match is {match_percentage_str} 😊 - This resume matches the job description!"  # Highlight in green for a good match
+    #             else:
+    #                 result = f"Match {match_percentage_str} 😭 - This resume does not match the job description."  # Highlight in red for a poor match
+    print(response_text)
+    return jsonify({"message": "Successful!","jobTitle":job_title,"techStack":tech_stack,"missingKeywords" : missing_keywords,"score":response_text}), 200
        
 
 if __name__ == '__main__':

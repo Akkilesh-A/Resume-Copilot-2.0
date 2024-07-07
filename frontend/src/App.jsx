@@ -1,13 +1,7 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import {GitHubScore,GitHubStatsForm,ResumeScanner,ResumeScore} from "./jobSeekerComponents"
 import {MenuPage,HomePage} from "./pages"
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
+import {RecoilRoot} from 'recoil';
 
 function App() {
 
@@ -21,7 +15,7 @@ function App() {
             <Route path="/githubstats/:gitHubDetails" element={<GitHubScore />} />
             <Route path="/menupage" element={<MenuPage />} />
             <Route path="/resumescoreform" element={<ResumeScanner />} />
-            <Route path="/resumescore/:details" element={<ResumeScore />} />
+            <Route path="/resumescore" element={<ResumeScore />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

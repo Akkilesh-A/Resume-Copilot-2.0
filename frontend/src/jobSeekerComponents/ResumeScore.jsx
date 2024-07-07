@@ -1,21 +1,32 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 
 const ResumeScore = () => {
+    const [data, setData] = useState(null);
 
-    const {details} = useParams()
-    const detailsArray=details.split("&")
-  return (
-    <div>
-        <h1>Get your resume score here</h1>
-        <p>{detailsArray[0]}</p>
-        <p>{detailsArray[1]}</p>
-        <p>{detailsArray[2]}</p>
-        <p>{detailsArray[3]}</p>
-        <p>{detailsArray[4]}</p>
-        <p>{detailsArray[5]}</p>
-    </div>
-  )
-}
+    useEffect(() => {
+        const storedData = localStorage.getItem('resumeScoreData');
+        if (storedData) {
+            setData(JSON.parse(storedData));
+        }
+    }, []);
 
-export default ResumeScore
+    if (!data) {
+        return <p>Loading...</p>;
+    }
+
+    return (
+        <div>
+            <h1>Get your resume score here</h1>
+            <div>
+                <p><strong>Message:</strong> {data.message}</p>
+                <p><strong>Job Title:</strong> {data.jobTitle}</p>
+                <p><strong>Tech Stack:</strong> {data.techStack}</p>
+                <p><strong>Missing Keywords:</strong> {data.missingKeywords}</p>
+                <p><strong>Score:</strong> {data.score}</p>
+                <p><strong>Result:</strong> {data.result}</p>
+            </div>
+        </div>
+    );
+};
+
+export default ResumeScore;

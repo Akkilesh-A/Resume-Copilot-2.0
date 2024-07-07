@@ -5,6 +5,7 @@ import re
 from flask import Flask, request, jsonify
 import PyPDF2 as pdf
 import docx2txt
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app)
@@ -35,7 +36,7 @@ def resume_scanner():
     tech_stack = request.form.get('techStack')
 
     # Process the uploaded file here if needed
-    genai.configure(api_key="AIzaSyAklh_Ui212l80skoaUTtf3XXSWIw6Rjl8")
+    genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
     # Set up the model configuration for text generation
     generation_config = {

@@ -16,7 +16,7 @@ function ResumeScanner() {
         formData.append('jobTitle', jobTitle);
         formData.append('techStack', techStack);
 
-        const url = "http://localhost:5000/resume_scan_with_ai"; // Ensure this matches your Flask route
+        const url = "https://resume-copilot-2-0.onrender.com//resume_scan_with_ai"; // Ensure this matches your Flask route
         const options = {
             method: 'POST',
             body: formData

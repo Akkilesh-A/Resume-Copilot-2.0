@@ -3,7 +3,6 @@ import { BlackButton } from '../components';
 import { useSelector } from 'react-redux';
 
 const ResumeScore = () => {
-    const missingKeywordsAfterfiltering=resumeScoreData.score
     const resumeScoreData = useSelector(state=>state.resumeScoreData)[0]
     return (
         <div className='hidden md:block bg-black md:h-screen text-white  w-screen pt-16'>
@@ -17,8 +16,9 @@ const ResumeScore = () => {
                         <div className=' bg-white text-black p-8 flex flex-col gap-8 rounded'>
                             <p className='text-[1.7rem]'><strong>Job Title:</strong> {resumeScoreData.jobTitle}</p>
                             <p className='text-[1.7rem]'><strong>Tech Stack:</strong> {resumeScoreData.techStack}</p>
-                            <p className='text-[1.7rem]'><strong>Missing Keywords:</strong> {resumeScoreData.missingKeywords}</p>
-                            <p className='text-[1.7rem]'><strong>Score:</strong> {resumeScoreData.score}</p>
+                            { resumeScoreData.missingKeywords && <p className='text-[1.7rem]'><strong>Missing Keywords:</strong> {resumeScoreData.missingKeywords[0]}</p>}
+                            {/* <p className='text-[1.7rem]'><strong>Score:</strong> {resumeScoreData.score}</p> */}
+                            <p className='text-[1.7rem]'><strong>Results:</strong> {resumeScoreData.result}</p>
                         </div> 
                     </div>
                 </div>

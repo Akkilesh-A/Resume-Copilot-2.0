@@ -123,7 +123,7 @@ def resume_scanner():
 
             # Initialize missing_keywords variable
             missing_keywords = ""
-
+            score=""
             # Extract Job Description Match percentage from the response
             match_percentage_str = response_text.split('"Job Description Match":"')[1].split('"')[0]
             

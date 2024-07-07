@@ -17,7 +17,6 @@ def healthy_server():
 UPLOAD_FOLDER = 'uploaded_files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 #generating score for JOB SEEKERS!
 @app.route("/resume_scan_with_ai", methods=['POST'])
 def resume_scanner():
@@ -93,7 +92,7 @@ def resume_scanner():
         
         # Return sorted list of missing keywords for readability
         return sorted(list(missing_keywords))
-        
+
     # Prompt template for generating AI response
     input_prompt_template = """
     As an experienced Applicant Tracking System (ATS) analyst,
@@ -147,9 +146,7 @@ def resume_scanner():
             #         result = f"Match {match_percentage_str} 😭 - This resume does not match the job description."  # Highlight in red for a poor match
     
     return jsonify({"message": "Successful!","jobTitle":job_title,"techStack":tech_stack,"missingKeywords" : missing_keywords,"score":response_text,"result":result}), 200
-    
-UPLOAD_FOLDER = 'uploaded_files'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+       
 
 if __name__ == '__main__':
     app.run(debug=False,host='0.0.0.0')

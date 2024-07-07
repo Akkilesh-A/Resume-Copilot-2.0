@@ -55,7 +55,36 @@ def resume_scanner():
         # Return the generated text
         return output.text
 
+    def extract_text_from_pdf_file(uploaded_file):
+        # Use PdfReader to read the text content from a PDF file
+        pdf_reader = pdf.PdfReader(uploaded_file)
+        text_content = ""
+        for page in pdf_reader.pages:
+            text_content += str(page.extract_text())
+        return text_content
 
+    def extract_text_from_docx_file(uploaded_file):
+        # Use docx2txt to extract text from a DOCX file
+        return docx2txt.process(uploaded_file)
+
+    def tokenize_text(text):
+        """Tokenizes text into words and removes punctuation."""
+        text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
+        words = text.split()  # Tokenize text into words
+        return words
+
+    def get_missing_keywords(job_description, resume_text):
+        """Get missing keywords from job description that are absent in resume."""
+        # Tokenize job description and resume text
+        job_words = set(tokenize_text(job_description))
+        resume_words = set(tokenize_text(resume_text))
+        
+        # Calculate missing keywords
+        missing_keywords = job_words - resume_words  # Difference between job and resume words
+        
+        # Return sorted list of missing keywords for readability
+        return sorted(list(missing_keywords))
+        
     # Prompt template for generating AI response
     input_prompt_template = """
     As an experienced Applicant Tracking System (ATS) analyst,

@@ -36,18 +36,14 @@ function ResumeScanner() {
             const data = await response.json();
 
             if (response.ok) {
-                console.log(data.message)
                 setData({message:data.message,jobTitle:jobTitle,techStack:techStack,score:data.score,result:data.result})  
-                console.log(finalData)
                 await localStorage.setItem('resumeScoreData',JSON.stringify(finalData))    
                 setLoading(false)          
                 window.location.href=`/resumescore`
             } else {
-                alert(data.error || 'Failed to process file');
                 setLoading(false)
             }
         } catch (error) {
-            alert('An error occurred while processing the file, Try again later!');
             setLoading(false)
         }
     }

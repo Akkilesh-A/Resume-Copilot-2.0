@@ -7,7 +7,7 @@ const ResumeScore = () => {
     const resumeScoreData = useSelector(state=>state.resumeScoreData)[0]
     return (
         <div className='hidden md:block bg-black md:h-screen text-white  w-screen pt-16'>
-            {resumeScoreData.message == "-" ? <div className=' text-center mt-[20%] text-[2.5em] font-bold'>You didn't upload any resume!🧐 </div> : 
+            {resumeScoreData.message == "-" ? <div className='text-center mt-[20%] text-[2.5em] font-bold'>You didn't upload any resume!🧐 </div> : 
             <div>
                 <div className=' text-center text-[2.5em] font-bold '>
                     Your Resume Score

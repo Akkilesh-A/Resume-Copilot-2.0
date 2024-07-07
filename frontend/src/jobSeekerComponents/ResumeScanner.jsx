@@ -41,8 +41,7 @@ function ResumeScanner() {
             const response = await fetch(url, options);
             const data = await response.json();
             if (response.ok) {
-                setData({message:data.message,jobTitle:jobTitle,techStack:techStack,score:data.score,result:data.result})  
-                dispatch(setResumeScore(finalData))
+                dispatch(setResumeScore({message:data.message,jobTitle:jobTitle,techStack:techStack,score:data.score,result:data.result}))
                 setLoading(false)          
                 navigate(`/resumescore`)
             } else {

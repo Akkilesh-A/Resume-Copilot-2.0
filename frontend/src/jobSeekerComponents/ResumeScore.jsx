@@ -4,10 +4,13 @@ const ResumeScore = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        const storedData = localStorage.getItem('resumeScoreData');
-        if (storedData) {
-            setData(JSON.parse(storedData));
+        async function getData(){
+            const storedData =await localStorage.getItem('resumeScoreData');
+            if (storedData) {
+                setData(JSON.parse(storedData));
+            }
         }
+        getData()
     }, []);
 
     if (!data) {

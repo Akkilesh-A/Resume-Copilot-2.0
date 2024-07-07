@@ -47,7 +47,7 @@ function ResumeScanner() {
                 setLoading(false)
             }
         } catch (error) {
-            alert('An error occurred while processing the file');
+            alert('An error occurred while processing the file, Try again later!');
             setLoading(false)
         }
     }

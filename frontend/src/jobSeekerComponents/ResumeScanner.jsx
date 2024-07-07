@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BlackButton, WhiteButton } from '../components';
+import { BlackButton } from '../components';
+import { useDispatch } from 'react-redux';
+import { setResumeScore } from '../features/resumeScoreSlice';
 
 function ResumeScanner() {
     const [image, setImage] = useState('');
@@ -14,6 +16,7 @@ function ResumeScanner() {
         score: '',
         result: ''
       } )
+    const dispatch =useDispatch()
     const [loading,setLoading] =useState(false)
     const navigate =useNavigate()
 
@@ -39,11 +42,9 @@ function ResumeScanner() {
             const data = await response.json();
             if (response.ok) {
                 setData({message:data.message,jobTitle:jobTitle,techStack:techStack,score:data.score,result:data.result})  
-                await localStorage.setItem('resumeScoreData',JSON.stringify(finalData))    
-                setTimeout(()=>{
-                    setLoading(false)          
-                    navigate(`/resumescore`)
-                },3000)
+                dispatch(setResumeScore(finalData))
+                setLoading(false)          
+                navigate(`/resumescore`)
             } else {
                 setLoading(false)
             }

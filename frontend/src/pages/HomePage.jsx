@@ -8,7 +8,7 @@ const HomePage = () => {
             <h1>Resume</h1>
             <h1>v</h1>
             <div className='absolute bottom-10 left-10'>
-              <Link to="/menupage"><button className='animate-bounce text-[2rem] bg-white text-black p-4'>About Us!</button></Link>
+              <Link to="/about"><button className='animate-bounce text-[2rem] bg-white text-black p-4'>About Us!</button></Link>
             </div>
         </div>
         <div className='font-extrabold text-[7em] flex-col flex justify-center items-start h-screen w-[50vw]'>

@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import {GitHubScore,GitHubStatsForm,ResumeScanner,ResumeScore} from "./jobSeekerComponents"
-import {MenuPage,HomePage} from "./pages"
+import {MenuPage, HomePage, AboutUs} from "./pages"
 import {RecoilRoot} from 'recoil';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
             <Route path="/menupage" element={<MenuPage />} />
             <Route path="/resumescoreform" element={<ResumeScanner />} />
             <Route path="/resumescore" element={<ResumeScore />} />
+            <Route path="/about" element={<AboutUs />} />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

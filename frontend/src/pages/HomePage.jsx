@@ -7,9 +7,9 @@ const HomePage = () => {
         <div className='bg-black text-white font-extrabold text-[7rem] flex-col flex justify-center items-end h-screen w-[50vw]'>
             <h1>Resume</h1>
             <h1>v</h1>
-            <div className='absolute bottom-10 left-10'>
+{/*             <div className='absolute bottom-10 left-10'>
               <Link to="/about"><button className='animate-bounce text-[2rem] bg-white text-black p-4'>About Us!</button></Link>
-            </div>
+            </div> */}
         </div>
         <div className='font-extrabold text-[7em] flex-col flex justify-center items-start h-screen w-[50vw]'>
             <h1>Copilot</h1>
